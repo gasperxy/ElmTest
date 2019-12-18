@@ -19,7 +19,7 @@ initialModel : () -> (Model, Cmd Msg)
 initialModel () = ({
     value=0,
     numberOfClicks=0}, Cmd.none)
-
+  
 view model = 
     Grid.container [] [
         Html.h1 [] [Html.text "Hello world."],
@@ -28,7 +28,10 @@ view model =
         Button.button [Button.success, Button.block, Button.attrs [He.onClick Increment]] [Html.text "Increment"],
         Button.button [Button.success, Button.block, Button.attrs [He.onClick Decrement]] [Html.text "Decrement"],
         Button.button [Button.success, Button.block, Button.attrs [He.onClick InitModel]] [Html.text "Initialize"]
+
     ]
+
+
 
 update : Msg -> Model ->(Model, Cmd Msg)
 update msg model =
